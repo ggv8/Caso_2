@@ -1,14 +1,11 @@
+//  Libraries
 //----------------
-// Libraries    ||
-//----------------
-
+# include <iostream>
 # include <exception>
 # include "Node.cpp"
 
-//--------------------------------
-// Structs, methods, functions  ||
-//--------------------------------
-
+//  Structs & Functions
+//--------------------------
 template<class T>
 class List
 {

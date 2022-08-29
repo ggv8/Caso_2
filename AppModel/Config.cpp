@@ -1,23 +1,12 @@
+//  Libraries
 //----------------
-// Libraries    ||
-//----------------
-
 # include <string>
 
-// Validacion de reentrancia y redeclaraciones #ifdef #ifndef #endif
-
+//  Namespaces
 //----------------
-// Constants    ||
-//----------------
-
-//----------------
-// Namespaces   ||
-//----------------
-
 using namespace std;
 
-//--------------------------------
-// Structs, methods, functions  ||
+//  Structs, methods, functions
 //--------------------------------
 
 class Config
@@ -30,9 +19,12 @@ class Config
         {}
 
         Config(string pName, string pValue = "")
+        : name(pName), value(pValue)
+        {}
+
+        string& getName()
         {
-            name = pName;
-            value = pValue;
+            return name;
         }
 
         void setValue(string pValue)
@@ -45,7 +37,3 @@ class Config
             return (name + ": " + value);
         }
 };
-
-//----------------
-// Main program ||
-//----------------
