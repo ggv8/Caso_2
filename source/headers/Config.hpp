@@ -2,37 +2,32 @@
 //----------------
 # include <string>
 
-//  Namespaces
-//----------------
-using namespace std;
-
 //  Structs, methods, functions
 //--------------------------------
-
 class Config
 {
-    string name;
-    string value;
+    std::string name;
+    std::string value;
 
     public:
         Config()
         {}
 
-        Config(string pName, string pValue = "")
+        Config(std::string pName, std::string pValue = "")
         : name(pName), value(pValue)
         {}
 
-        string& getName()
+        std::string& getName()
         {
             return name;
         }
 
-        void setValue(string pValue)
+        void setValue(std::string pValue)
         {
             value = pValue;
         }
 
-        string toString()
+        std::string toString()
         {
             return (name + ": " + value);
         }

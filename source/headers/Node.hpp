@@ -1,5 +1,6 @@
 //  Structs & Functions
 //--------------------------
+# pragma once
 template<class T>
 struct Node
 {

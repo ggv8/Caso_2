@@ -1,11 +1,9 @@
 //  Libraries
 //----------------
-# include "AppModel/Routine.cpp"
-# include "AppModel/Task.cpp"
-# include "AppModel/Device.cpp"
-# include "AppModel/Config.cpp"
-# include "AppModel/LinearADT/Array.cpp"
-# include "AppModel/LinearADT/List.cpp"
+# include "source/headers/Task.hpp"
+# include "source/headers/Routine.hpp"
+# include "source/headers/Device.hpp"
+# include "source/headers/List.hpp"
 
 //  Directives
 //----------------
@@ -15,6 +13,7 @@
 
 //  Namespaces
 //----------------
+using namespace std;
 
 //  Structs & Functions
 //--------------------------

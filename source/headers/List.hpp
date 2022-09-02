@@ -1,8 +1,9 @@
 //  Libraries
 //----------------
+# pragma once
 # include <iostream>
 # include <exception>
-# include "Node.cpp"
+# include "Node.hpp"
 
 //  Structs & Functions
 //--------------------------
@@ -60,14 +61,14 @@ class List
             {
                 throw std::exception();
             }
-            Node<T>* search = head->next;
-            for (int position = 0; search != nullptr; position++)
+            Node<T>* current = head->next;
+            for (int position = 0; current != nullptr; position++)
             {
                 if (position == pIndex)
                     break;
-                search = search->next;
+                current = current->next;
             }
-            return search->data;
+            return current->data;
         }
 
         void add(const T& pData)
@@ -87,17 +88,17 @@ class List
             }
 
             Node<T>* element = new Node<T>{pData};
-            Node<T>* search = head->next;
-            for (int position = 0; search != nullptr; position++)
+            Node<T>* current = head->next;
+            for (int position = 0; current != nullptr; position++)
             {
                 if (position == pIndex)
                     break;
-                search = search->next;
+                current = current->next;
             }
 
-            element->prev = search->prev;
-            element->next = search;
-            search->prev = search->prev->next = element;
+            element->prev = current->prev;
+            element->next = current;
+            current->prev = current->prev->next = element;
             size++;
         }
 
@@ -107,18 +108,18 @@ class List
             {
                 throw std::exception();
             }
-            Node<T>* search = head->next;
-            for (int position = 0; search != nullptr; position++)
+            Node<T>* current = head->next;
+            for (int position = 0; current != nullptr; position++)
             {
                 if (position == pIndex)
                     break;
-                search = search->next;
+                current = current->next;
             }
 
-            T dataVal = (search->data);
-            search->prev->next = search->next;
-            search->next->prev = search->prev;
-            delete search;
+            T dataVal = (current->data);
+            current->prev->next = current->next;
+            current->next->prev = current->prev;
+            delete current;
             size--;
             return dataVal;
         }
